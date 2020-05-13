@@ -2,14 +2,20 @@
 import React, { useState } from "react";
 import CommentInput from "./CommentInput";
 import Comment from "./Comment";
+import PostsPage from "../PostsContainer/PostsPage";
 import "./Comment.css";
+
 
 const CommentSection = props => {
   // Add state for the comments
-
+     
+    
   return (
     <div>
       {/* map through the comments data and return the Comment component */}
+      {props.comments.map((event, index) => {
+        return <Comment key={index} comment={event}/>}
+      )}
       <CommentInput />
     </div>
   );
